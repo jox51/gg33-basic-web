@@ -1,0 +1,191 @@
+Core Principles
+
+Write concise, technical responses with accurate PHP/Laravel and React/Inertia examples.
+
+Follow SOLID, DRY, and YAGNI principles for maintainable and scalable code.
+
+Use modern PHP (8.1+) and Laravel (10+) features for performance and readability.
+
+Design the architecture with modularization and code reuse in mind.
+
+Use clear, descriptive naming conventions for better code understanding.
+
+Dependencies
+
+PHP: 8.1+
+
+Laravel: 10.0+
+
+React: Latest LTS version
+
+Inertia.js: Latest version
+
+Composer: For dependency management
+
+Node.js & npm: For front-end package management
+
+PHP and Laravel Standards
+
+Enforce strict typing: declare(strict_types=1);
+
+Follow PSR-12 coding standards for consistency.
+
+Utilize Laravel's built-in features and helpers effectively.
+
+Follow the standard Laravel project structure.
+
+Implement:
+
+Middleware for request filtering/modification.
+
+Form Request validation.
+
+Eloquent ORM for database interactions.
+
+Query builder for complex queries.
+
+Use database migrations and seeders to manage database state.
+
+Implement proper exception handling and logging:
+
+Use Laravel's logging and exception handler.
+
+Create custom exceptions where needed.
+
+React and Inertia Best Practices
+
+Structure front-end code within resources/js following modular and reusable components.
+
+Use React hooks for state and side effects.
+
+Leverage Inertia's Link component for client-side navigation.
+
+Prefer props-driven data handling, keeping the component stateless where possible.
+
+Implement centralized state management when necessary (e.g., React Context or Zustand).
+
+Use ESLint and Prettier to enforce coding style consistency.
+
+Handle API interactions with Inertia's useForm and router functions.
+
+Prefer TypeScript for type safety in React components.
+
+Laravel Best Practices
+
+Prefer Eloquent ORM over raw SQL.
+
+Apply Repository and Service patterns to separate business logic from controllers.
+
+Use Laravel's built-in authentication and authorization features (Sanctum, Policies).
+
+Leverage caching mechanisms (Redis, Memcached) for better performance.
+
+Utilize queues and job processing with Horizon.
+
+Implement comprehensive testing with PHPUnit and Laravel Dusk.
+
+Follow API versioning practices for backward compatibility.
+
+Ensure proper CSRF protection, XSS prevention, and input sanitization.
+
+Use Telescope for debugging and monitoring.
+
+Apply proper security practices such as rate limiting and API throttling.
+
+Code Architecture
+
+Naming Conventions
+
+Use PascalCase for class names, camelCase for methods, and snake_case for database columns.
+
+Controllers: Singular model name + Controller suffix (e.g., UserController).
+
+Models: Singular form of entities (e.g., Order, Product).
+
+Services: Group into app/Services, named according to the model context.
+
+Controllers
+
+Make controllers final to prevent inheritance.
+
+Keep controllers thin; offload logic to services.
+
+Use method injection over property injection.
+
+Models
+
+Define fillable attributes to prevent mass assignment vulnerabilities.
+
+Use relationships and query scopes for reusable query logic.
+
+Services
+
+Encapsulate complex business logic within service classes.
+
+Organize services within app/Services and make them final.
+
+Routing
+
+Keep routes well-organized in separate files.
+
+Group API and web routes logically.
+
+Use route model binding to simplify queries.
+
+Type Declarations
+
+Use explicit return type declarations.
+
+Prefer nullable types and union types where necessary.
+
+Error Handling
+
+Centralize error handling using Laravel's exception handler.
+
+Return proper HTTP status codes and messages for API responses.
+
+React/Inertia Integration Guidelines
+
+Use Inertia pages within resources/js/Pages and follow the naming convention based on the controller.
+
+Pass only necessary data via props; avoid overloading components.
+
+Handle flash messages using Inertia's shared props.
+
+Implement route management via @inertia helper in Blade views.
+
+Use Inertia middleware for shared data across views.
+
+Testing Strategy
+
+Write unit tests for models and services.
+
+Use feature tests for controllers.
+
+Perform front-end testing using Jest and React Testing Library.
+
+Utilize Laravel Dusk for end-to-end testing.
+
+Performance Optimization
+
+Optimize database queries using eager loading and indexing.
+
+Use lazy loading for relationships where necessary.
+
+Minify and bundle front-end assets with vite.
+
+Implement server-side caching strategies.
+
+Key Takeaways
+
+Follow Laravel MVC patterns.
+
+Ensure request validation using Form Requests.
+
+Build maintainable REST APIs with proper response formatting.
+
+Automate tasks using schedulers and event listeners.
+
+Secure applications with proper authentication and authorization.
+
+By adhering to these guidelines, Laravel with React/Inertia projects will maintain high code quality, scalability, and long-term maintainability.
