@@ -39,6 +39,7 @@ return [
         'base_url' => env('MOBILE_BASE_URL'),
         'synastry_endpoint' => env('SYNASTRY_ENDPOINT'),
         'planets_endpoint' => env('PLANETS_ENDPOINT'),
+        'lucky_times_endpoint' => env('LUCKY_TIMES_ENDPOINT'),
     ],
 
     'pocketbase' => [

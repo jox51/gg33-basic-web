@@ -3,6 +3,8 @@
 use App\Http\Controllers\MarriageJobController;
 use App\Http\Controllers\PlanetJobController;
 use App\Http\Controllers\PlanetsController;
+use App\Http\Controllers\LuckyTimesController;
+use App\Http\Controllers\LuckyTimesJobController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SynastryController;
@@ -35,6 +37,22 @@ Route::get('/planets-jobs/job/{job_id}', [PlanetJobController::class, 'getJob'])
         
 Route::delete('/planets-jobs/{job_id}', [PlanetJobController::class, 'deleteJob'])
         ->name('planets.jobs.delete');
+
+
+// Lucky Times API Routes
+
+Route::post('/lucky-times', [LuckyTimesController::class, 'store'])
+    ->name('lucky-times.store');
+
+Route::get('/lucky-times/jobs/{user_id}', [LuckyTimesJobController::class, 'getUserJobs'])
+        ->name('lucky-times.user');
+
+Route::get('/lucky-times/job/{job_id}', [LuckyTimesJobController::class, 'getJob'])
+        ->name('lucky-times.get');
+
+        
+Route::delete('/lucky-times/{job_id}', [LuckyTimesJobController::class, 'deleteJob'])
+        ->name('lucky-times.delete');
 
 // Route::get('/charts/synastry-mobile/{jobId}', [SynastryController::class, 'checkStatus'])
 //     ->name('charts.synastry-mobile.status');
